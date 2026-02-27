@@ -25,7 +25,7 @@ public class Runner {
             session.beginTransaction();
 
             UserDao userDao = new UserDao(sessionFactory);
-            userDao.getSumAmount();
+
             userDao.addNewExpenses(User.builder().userChoice(UserChoice.TOGETHER)
                     .category(Category.EAT)
                     .moneyValue(MoneyValue.VND)
