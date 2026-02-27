@@ -25,12 +25,12 @@ public class Runner {
             session.beginTransaction();
 
             UserDao userDao = new UserDao(sessionFactory);
-            /*userDao.getSumAmount();
+            userDao.getSumAmount();
             userDao.addNewExpenses(User.builder().userChoice(UserChoice.TOGETHER)
-                    .category(Category.ENTERTAINMENT)
+                    .category(Category.EAT)
                     .moneyValue(MoneyValue.VND)
-                    .amount(294000.0)
-                    .createdAt(LocalDate.now()*//*.minusDays(1)*//*).build());*/
+                    .amount(200000.0)
+                    .createdAt(LocalDate.now()).build());
             /*userDao.deleteExpenses(11);*/
             /*userDao.countOperation();*/
             userDao.findALl();

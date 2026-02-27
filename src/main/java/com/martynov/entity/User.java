@@ -2,6 +2,8 @@ package com.martynov.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 @Data
@@ -29,7 +31,11 @@ public class User {
     private MoneyValue moneyValue;
     @Column(name = "amount")
     private double amount;
+    @CreationTimestamp
     @Column(name = "created_at")
     private LocalDate createdAt;
+    @UpdateTimestamp
+    @Column(name = "modify_at")
+    private LocalDate modifyAt;
 
 }
