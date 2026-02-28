@@ -6,7 +6,9 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
-@Data
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @Builder
@@ -37,5 +39,9 @@ public class User {
     @UpdateTimestamp
     @Column(name = "modify_at")
     private LocalDate modifyAt;
+    @ElementCollection
+    @CollectionTable(name = "expenses_tags", schema = "expenses", joinColumns = @JoinColumn(name = "expenses_id"))
+    @Column(name = "tag_name")
+    private List<String> tags = new ArrayList<>();
 
 }

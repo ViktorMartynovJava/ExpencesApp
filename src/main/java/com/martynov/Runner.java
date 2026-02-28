@@ -24,17 +24,21 @@ public class Runner {
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
 
+
             UserDao userDao = new UserDao(sessionFactory);
 
-            userDao.addNewExpenses(User.builder().userChoice(UserChoice.TOGETHER)
+            /*userDao.addNewExpenses(User.builder().userChoice(UserChoice.TOGETHER)
                     .category(Category.EAT)
                     .moneyValue(MoneyValue.VND)
                     .amount(200000.0)
-                    .createdAt(LocalDate.now()).build());
+                    .createdAt(LocalDate.now()).build());*/
             /*userDao.deleteExpenses(11);*/
             /*userDao.countOperation();*/
-            userDao.findALl();
-
+//            userDao.findALl();
+            userDao.getSumAmount();
+            session.getTransaction().commit();
+        }catch (Exception e) {
+            throw new RuntimeException(e);
         }
 
     }

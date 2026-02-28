@@ -2,7 +2,7 @@ package com.martynov.dao;
 
 import com.martynov.entity.User;
 import org.hibernate.SessionFactory;
-import org.hibernate.annotations.NamedQueries;
+
 
 import java.util.List;
 
