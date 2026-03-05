@@ -9,6 +9,8 @@ import com.martynov.entity.UserChoice;
 import org.hibernate.cfg.Configuration;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Runner {
@@ -30,7 +32,8 @@ public class Runner {
             /*userDao.addNewExpenses(User.builder().userChoice(UserChoice.TOGETHER)
                     .category(Category.EAT)
                     .moneyValue(MoneyValue.VND)
-                    .amount(200000.0)
+                    .amount(42000.0)
+                            .tags(List.of("Bread"))
                     .createdAt(LocalDate.now()).build());*/
             /*userDao.deleteExpenses(11);*/
             /*userDao.countOperation();*/

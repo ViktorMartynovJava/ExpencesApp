@@ -2,6 +2,7 @@ package com.martynov.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -16,6 +17,8 @@ import java.util.List;
 @NoArgsConstructor
 @org.hibernate.annotations.NamedQuery(name = "User.totalSum", query = "SELECT sum(u.amount) FROM User u")
 @Entity
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Table(name = "balance", schema = "expenses")
 public class User {
     @Id

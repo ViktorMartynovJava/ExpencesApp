@@ -1,5 +1,6 @@
 package com.martynov.dao;
 
+import com.martynov.entity.Category;
 import com.martynov.entity.User;
 import org.hibernate.SessionFactory;
 
@@ -98,6 +99,17 @@ public class UserDao {
             var result = session.createQuery("SELECT count(u.amount) FROM User u", Long.class).getSingleResult();
             System.out.println(result);
             return result != null ? result.intValue() : 0;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //TODO sumAllExpensesFromCategory
+    public double sumAllExpensesFromCategory(Category category) {
+        try(var session = sessionFactory.openSession()) {
+            var result = session.createQuery("SELECT SUM(u.amount) from User u where category = :category", Number.class)
+                    .setParameter("category",category).getResultStream().findFirst().orElse(0.0);
+            return result != null ? result.doubleValue() : 0;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
