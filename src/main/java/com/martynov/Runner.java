@@ -32,9 +32,9 @@ public class Runner {
             /*userDao.addNewExpenses(User.builder().userChoice(UserChoice.TOGETHER)
                     .category(Category.EAT)
                     .moneyValue(MoneyValue.VND)
-                    .amount(42000.0)
-                            .tags(List.of("Bread"))
-                    .createdAt(LocalDate.now()).build());*/
+                    .amount(116000.0)
+                            .tags(List.of("store"))
+                    .createdAt(LocalDate.now().minusDays(1)).build());*/
             /*userDao.deleteExpenses(11);*/
             /*userDao.countOperation();*/
 //            userDao.findALl();

@@ -85,7 +85,8 @@ public class UserDao {
     public double getSumAmount() {
         try(var session = sessionFactory.openSession()) {
             var result = session.createNamedQuery("User.totalSum", Double.class).getSingleResult();
-            System.out.println(result);
+            String normalView = String.format("%,.0f", result);
+            System.out.println(normalView);
             return result;
         } catch (Exception e) {
             throw new RuntimeException(e);
